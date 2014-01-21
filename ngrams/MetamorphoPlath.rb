@@ -30,6 +30,11 @@ verbose
 
 #to run as background process, will tweet every hour
 loop do 
-  tweet TextGenerator.new('metamorphoplath.txt').speak 
+  text = TextGenerator.new('metamorphoplath.txt').speak 
+  #tweet length
+  until text.to_s.length <= 140
+    text = TextGenerator.new('metamorphoplath.txt').speak
+  end 
+  tweet text
   sleep 3600
 end
