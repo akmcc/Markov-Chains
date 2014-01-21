@@ -61,12 +61,9 @@ class TextGenerator
   end
 
   def speak
-    puts sample_sentence(probabilities(bigrams(@sentences)))
+    sample_sentence(probabilities(bigrams(@sentences)))
   end
 end
-
-metamor = TextGenerator.new('texts/metamorphosis.txt')
-metamor.speak
 
 
 
